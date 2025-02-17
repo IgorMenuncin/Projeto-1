@@ -13,6 +13,8 @@ public class Usuario {
     @Id
     private UUID id;
 
+    private Integer codigo;
+
     private String nome;
 
     private String email;

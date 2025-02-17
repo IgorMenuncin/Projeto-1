@@ -5,6 +5,7 @@ CREATE TYPE situacao_cliente AS ENUM ('ATIVO', 'INATIVO');
 CREATE TABLE fil_filial
 (
     id       UUID PRIMARY KEY,
+    codigo   INTEGER             NOT NULL,
     nome     VARCHAR(100) UNIQUE NOT NULL,
     cidade   VARCHAR(100)        NOT NULL,
     estado   VARCHAR(100)        NOT NULL,
@@ -15,6 +16,7 @@ CREATE TABLE fil_filial
 CREATE TABLE usu_usuario
 (
     id        UUID PRIMARY KEY,
+    codigo    INTEGER             NOT NULL,
     email     VARCHAR(100) UNIQUE NOT NULL,
     senha     VARCHAR(100)        NOT NULL,
     nome      VARCHAR(100)        NOT NULL,
@@ -27,6 +29,7 @@ CREATE TABLE usu_usuario
 CREATE TABLE cli_cliente
 (
     id                              UUID PRIMARY KEY,
+    codigo                          INTEGER          NOT NULL,
     nome                            VARCHAR(100),
     data_cadastro                   TIMESTAMP        NOT NULL,
     data_aniversario                TIMESTAMP        NOT NULL,
@@ -38,6 +41,7 @@ CREATE TABLE cli_cliente
 CREATE TABLE atd_atendimento
 (
     id              UUID PRIMARY KEY,
+    codigo          INTEGER   NOT NULL,
     dia_atendimento TIMESTAMP NOT NULL,
     id_usuario      UUID      NOT NULL,
     id_cliente      UUID      NOT NULL,
