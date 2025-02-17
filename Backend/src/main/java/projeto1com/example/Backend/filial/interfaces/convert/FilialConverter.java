@@ -32,7 +32,6 @@ public class FilialConverter {
     }
 
     public void updateEntity(FilialDto dto, Filial entity) {
-        entity.setId(dto.getId());
         entity.setCodigo(dto.getCodigo());
         entity.setNome(dto.getNome());
         entity.setCidade(dto.getCidade());

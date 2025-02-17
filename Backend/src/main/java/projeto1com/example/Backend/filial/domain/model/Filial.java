@@ -3,6 +3,8 @@ package projeto1com.example.Backend.filial.domain.model;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.JdbcType;
+import org.hibernate.dialect.PostgreSQLEnumJdbcType;
 import projeto1com.example.Backend.filial.domain.model.enums.SituacaoFilial;
 
 import java.util.UUID;
@@ -34,5 +36,7 @@ public class Filial {
     private String pais;
 
     @Column(name = "situacao")
+    @Enumerated(EnumType.STRING)
+    @JdbcType(PostgreSQLEnumJdbcType.class)
     private SituacaoFilial situacao;
 }
