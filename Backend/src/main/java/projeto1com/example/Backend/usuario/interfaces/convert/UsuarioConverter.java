@@ -1,8 +1,10 @@
 package projeto1com.example.Backend.usuario.interfaces.convert;
 
+import org.springframework.stereotype.Component;
 import projeto1com.example.Backend.usuario.domain.model.Usuario;
 import projeto1com.example.Backend.usuario.interfaces.dto.UsuarioDto;
 
+@Component
 public class UsuarioConverter {
 
     public Usuario createEntity(UsuarioDto dto) {
