@@ -24,8 +24,8 @@ public class UsuarioController {
     private UsuarioConverter usuarioConverter;
 
     @PostMapping
-    private ResponseEntity<UsuarioDto> createUsuario(@RequestBody UsuarioDto usuarioDto) {
-        Usuario dadosUsuario = usuarioConverter.createEntity(usuarioDto);
+    private ResponseEntity<UsuarioDto> createUsuario(@RequestBody UsuarioDto dto) {
+        Usuario dadosUsuario = usuarioConverter.createEntity(dto);
         Usuario usuarioSalvo = usuarioService.insert(dadosUsuario);
         UsuarioDto usuarioSalvoDto = usuarioConverter.createDto(usuarioSalvo);
         return ResponseEntity.status(HttpStatus.CREATED).body(usuarioSalvoDto);
