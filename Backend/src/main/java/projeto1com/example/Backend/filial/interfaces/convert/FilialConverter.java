@@ -9,7 +9,6 @@ public class FilialConverter {
 
     public Filial createEntity(FilialDto dto) {
         Filial entity = new Filial();
-        entity.setId(dto.getId());
         entity.setCodigo(dto.getCodigo());
         entity.setNome(dto.getNome());
         entity.setCidade(dto.getCidade());

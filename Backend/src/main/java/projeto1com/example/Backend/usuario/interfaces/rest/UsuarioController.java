@@ -49,4 +49,20 @@ public class UsuarioController {
         return ResponseEntity.ok(dto);
     }
 
+    @PutMapping("/{id}")
+    private ResponseEntity<UsuarioDto> updateUsuario(@PathVariable UUID id, @RequestBody UsuarioDto dto) {
+        Usuario usuario = usuarioService.findById(id);
+        usuarioConverter.updateEntity(dto, usuario);
+        Usuario usuarioAlterado = usuarioService.insert(usuario);
+        UsuarioDto usuarioAlteradoDto = usuarioConverter.createDto(usuarioAlterado);
+        return ResponseEntity.ok(usuarioAlteradoDto);
+    }
+
+    @DeleteMapping("/{id}")
+    private ResponseEntity<UsuarioDto> deleteUsuario(@PathVariable UUID id) {
+        Usuario usuario = usuarioService.findById(id);
+        usuarioService.delete(usuario);
+        return ResponseEntity.noContent().build();
+    }
+
 }

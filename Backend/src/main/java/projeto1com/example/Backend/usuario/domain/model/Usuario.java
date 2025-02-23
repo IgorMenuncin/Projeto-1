@@ -43,5 +43,6 @@ public class Usuario {
 
     @ManyToOne
     @JoinColumn(name = "id_filial", referencedColumnName = "id")
-    private Filial idFilial;
+    private Filial filial;
+
 }

@@ -32,10 +32,10 @@ CREATE TABLE cli_cliente
     codigo                          INTEGER          NOT NULL,
     nome                            VARCHAR(100),
     data_cadastro                   TIMESTAMP        NOT NULL,
-    data_aniversario                TIMESTAMP        NOT NULL,
+    data_nascimento                TIMESTAMP        NOT NULL,
     situacao                        situacao_cliente NOT NULL DEFAULT 'ATIVO',
-    id_usuario_responsavel_cadastro UUID             NOT NULL,
-    CONSTRAINT fk_cliente_usuario_cadastro FOREIGN KEY (id_usuario_responsavel_cadastro) REFERENCES usu_usuario (id)
+    id_usuario UUID             NOT NULL,
+    CONSTRAINT fk_cliente_usuario FOREIGN KEY (id_usuario) REFERENCES usu_usuario (id)
 );
 
 CREATE TABLE atd_atendimento

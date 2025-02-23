@@ -22,8 +22,8 @@ public class UsuarioService {
         return usuarioRepository.save(usuario);
     }
 
-    public void delete(UUID id) {
-        usuarioRepository.deleteById(id);
+    public void delete(Usuario usuario) {
+        usuarioRepository.delete(usuario);
     }
 
     public Usuario findById(UUID id) {

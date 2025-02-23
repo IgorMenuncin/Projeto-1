@@ -24,4 +24,6 @@ public class UsuarioDto {
 
     private SituacaoUsuario situacao;
 
+    private UUID idFilial;
+
 }
